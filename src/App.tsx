@@ -23,9 +23,37 @@ function App() {
     }));
   };
 
+  if (showWaitingList) {
+    return (
+      <div className="min-h-screen flex items-center justify-center">
+        <div className="max-w-2xl mx-auto px-4 py-16 text-center">
+          <h1 className="text-3xl font-bold text-[#34495E] mb-4">
+            You're on the Waiting List! 🎉
+          </h1>
+          <p className="text-xl text-gray-600 mb-6">
+            Thank you! We'll notify you when we’re ready.
+          </p>
+          <button
+            onClick={() => setShowWaitingList(false)}
+            className="px-6 py-3 bg-[#2ECC71] text-white font-semibold rounded-lg hover:bg-[#27AE60] transition-colors"
+          >
+            Back to Home
+          </button>
+        </div>
+      </div>
+    );
+  }
+
   return (
     <div className="min-h-screen bg-white">
-      {/* Navigation */}
+      {/* ✅ Hidden Form for Netlify Detection */}
+      <form name="contact" method="POST" data-netlify="true" hidden>
+        <input type="hidden" name="form-name" value="contact" />
+        <input type="text" name="name" />
+        <input type="email" name="email" />
+      </form>
+
+      {/* ✅ Navigation */}
       <nav className="bg-white shadow-sm">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center h-16">
@@ -44,7 +72,7 @@ function App() {
         </div>
       </nav>
 
-      {/* Hero Section */}
+      {/* ✅ Hero Section */}
       <div className="bg-gradient-to-r from-[#2ECC71]/10 to-[#34495E]/10 py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
@@ -62,14 +90,19 @@ function App() {
         </div>
       </div>
 
-      {/* ✅ Netlify-Ready Hidden Form for Detection */}
-      <form name="contact" method="POST" data-netlify="true" hidden>
-        <input type="hidden" name="form-name" value="contact" />
-        <input type="text" name="name" />
-        <input type="email" name="email" />
-      </form>
+      {/* ✅ Features Section (Ensure this stays intact) */}
+      <div className="bg-white py-16">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <h2 className="text-3xl font-bold text-[#34495E] mb-8">
+            Why Property Managers Love Our Tool
+          </h2>
+          <p className="text-lg text-gray-600">
+            Automate guest communication, enhance your workflow, and free up hours every week.
+          </p>
+        </div>
+      </div>
 
-      {/* ✅ Modal with Netlify-Ready Form */}
+      {/* ✅ Modal with Netlify-Compatible Form */}
       {showModal && (
         <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center p-4 z-50">
           <div className="bg-white rounded-xl shadow-xl max-w-md w-full p-6 relative">
