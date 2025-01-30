@@ -103,22 +103,24 @@ function App() {
                 </svg>
               </div>
               <div className="ml-2">
-                <span className="text-xl font-bold text-[#34495E]">WhatsApp Tool</span>
-              </div>
-            </div>
-            <div className="flex items-center space-x-4">
-              <button
-                onClick={() => setShowModal(true)}
-                className="inline-flex items-center px-4 py-2 bg-[#2ECC71] text-white font-semibold rounded-lg hover:bg-[#27AE60] transition-colors text-sm"
-              >
-                Start Free Trial
-              </button>
-            </div>
-          </div>
-        </div>
-      </nav>
+  <span className="text-xl font-bold text-[#34495E]">WhatsApp Tool</span>
+</div>
+</div>
+<div className="flex items-center space-x-4">
+  <a
+    href="https://tinyurl.com/bdvspsw4"
+    target="_blank"
+    rel="noopener noreferrer"
+    className="inline-flex items-center px-4 py-2 bg-[#2ECC71] text-white font-semibold rounded-lg hover:bg-[#27AE60] transition-colors text-sm"
+  >
+    Start Free Trial
+  </a>
+</div>
+</div>
+</div>
+</nav>
 
-      {/* Hero Section */}
+{/* Hero Section */}
       <div className="bg-gradient-to-r from-[#2ECC71]/10 to-[#34495E]/10">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-12 pb-16">
           <div className="grid md:grid-cols-2 gap-12 items-center">
