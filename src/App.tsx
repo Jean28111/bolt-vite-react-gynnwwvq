@@ -90,16 +90,8 @@ function App() {
     );
   }
 
-    return (
+  return (
     <div className="min-h-screen bg-white">
-      
-      {/* Hidden Netlify Form for Detection */}
-      <form name="contact" method="POST" data-netlify="true" hidden>
-        <input type="hidden" name="form-name" value="contact" />
-        <input type="text" name="name" />
-        <input type="email" name="email" />
-      </form>
-
       {/* Navigation */}
       <nav className="bg-white shadow-sm">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
