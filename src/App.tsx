@@ -2,11 +2,16 @@ import React, { useState } from 'react';
 
 function App() {
   const [showModal, setShowModal] = useState(false);
-  const [formData, setFormData] = useState({ name: '', email: '' });
+  const [showWaitingList, setShowWaitingList] = useState(false);
+  const [formData, setFormData] = useState({
+    name: '',
+    email: ''
+  });
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     setShowModal(false);
+    setShowWaitingList(true);
     setFormData({ name: '', email: '' });
   };
 
@@ -57,57 +62,14 @@ function App() {
         </div>
       </div>
 
-      {/* ✅ Netlify-Ready Form (Visible on Page Load) */}
-      <div className="max-w-lg mx-auto bg-white shadow-md rounded-lg p-8 mt-10">
-        <h2 className="text-2xl font-bold text-gray-800 mb-6 text-center">
-          Sign Up for Early Access
-        </h2>
-        <form 
-          name="contact" 
-          method="POST" 
-          data-netlify="true"
-          className="space-y-4"
-        >
-          <input type="hidden" name="form-name" value="contact" />
+      {/* ✅ Netlify-Ready Hidden Form for Detection */}
+      <form name="contact" method="POST" data-netlify="true" hidden>
+        <input type="hidden" name="form-name" value="contact" />
+        <input type="text" name="name" />
+        <input type="email" name="email" />
+      </form>
 
-          <div>
-            <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-1">
-              Full Name
-            </label>
-            <input
-              type="text"
-              id="name"
-              name="name"
-              required
-              className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#2ECC71] focus:border-transparent"
-              placeholder="John Doe"
-            />
-          </div>
-
-          <div>
-            <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-1">
-              Email Address
-            </label>
-            <input
-              type="email"
-              id="email"
-              name="email"
-              required
-              className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#2ECC71] focus:border-transparent"
-              placeholder="john@example.com"
-            />
-          </div>
-
-          <button
-            type="submit"
-            className="w-full bg-[#2ECC71] text-white font-semibold py-3 rounded-lg hover:bg-[#27AE60] transition-colors"
-          >
-            Start Free Trial
-          </button>
-        </form>
-      </div>
-
-      {/* Modal (Now Only for UI, No Netlify Form Here) */}
+      {/* ✅ Modal with Netlify-Ready Form */}
       {showModal && (
         <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center p-4 z-50">
           <div className="bg-white rounded-xl shadow-xl max-w-md w-full p-6 relative">
@@ -119,16 +81,52 @@ function App() {
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
               </svg>
             </button>
-            <h3 className="text-2xl font-bold text-[#34495E] mb-6">Join the Waiting List</h3>
-            <p className="text-gray-600 mb-4">
-              Get early access to our WhatsApp automation tool.
-            </p>
-            <button
-              onClick={() => setShowModal(false)}
-              className="w-full bg-[#2ECC71] text-white font-semibold py-3 rounded-lg hover:bg-[#27AE60] transition-colors"
+            <h3 className="text-2xl font-bold text-[#34495E] mb-6">Start Your Free Trial</h3>
+
+            {/* ✅ Netlify-Compatible Form Inside the Modal */}
+            <form 
+              name="contact" 
+              method="POST" 
+              data-netlify="true"
+              className="space-y-4"
             >
-              Close
-            </button>
+              <input type="hidden" name="form-name" value="contact" />
+
+              <div>
+                <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-1">
+                  Full Name
+                </label>
+                <input
+                  type="text"
+                  id="name"
+                  name="name"
+                  required
+                  className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#2ECC71] focus:border-transparent"
+                  placeholder="John Doe"
+                />
+              </div>
+
+              <div>
+                <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-1">
+                  Email Address
+                </label>
+                <input
+                  type="email"
+                  id="email"
+                  name="email"
+                  required
+                  className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#2ECC71] focus:border-transparent"
+                  placeholder="john@example.com"
+                />
+              </div>
+
+              <button
+                type="submit"
+                className="w-full bg-[#2ECC71] text-white font-semibold py-3 rounded-lg hover:bg-[#27AE60] transition-colors"
+              >
+                Start Free Trial
+              </button>
+            </form>
           </div>
         </div>
       )}
