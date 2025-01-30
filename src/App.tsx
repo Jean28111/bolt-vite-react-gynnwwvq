@@ -23,27 +23,6 @@ function App() {
     }));
   };
 
-  if (showWaitingList) {
-    return (
-      <div className="min-h-screen flex items-center justify-center">
-        <div className="max-w-2xl mx-auto px-4 py-16 text-center">
-          <h1 className="text-3xl font-bold text-[#34495E] mb-4">
-            You're on the Waiting List! 🎉
-          </h1>
-          <p className="text-xl text-gray-600 mb-6">
-            Thank you! We'll notify you when we’re ready.
-          </p>
-          <button
-            onClick={() => setShowWaitingList(false)}
-            className="px-6 py-3 bg-[#2ECC71] text-white font-semibold rounded-lg hover:bg-[#27AE60] transition-colors"
-          >
-            Back to Home
-          </button>
-        </div>
-      </div>
-    );
-  }
-
   return (
     <div className="min-h-screen bg-white">
       {/* ✅ Hidden Form for Netlify Detection */}
@@ -90,8 +69,20 @@ function App() {
         </div>
       </div>
 
-      {/* ✅ Features Section (Ensure this stays intact) */}
+      {/* ✅ Problem/Solution Section (Restored) */}
       <div className="bg-white py-16">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <h2 className="text-3xl font-bold text-[#34495E] mb-8">
+            Managing Guest Communication Can Be Overwhelming
+          </h2>
+          <p className="text-lg text-gray-600 mb-6">
+            Property managers spend too much time on guest messaging. Our tool automates everything.
+          </p>
+        </div>
+      </div>
+
+      {/* ✅ Features Section */}
+      <div className="bg-gray-50 py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="text-3xl font-bold text-[#34495E] mb-8">
             Why Property Managers Love Our Tool
@@ -101,6 +92,11 @@ function App() {
           </p>
         </div>
       </div>
+
+      {/* ✅ Footer */}
+      <footer className="bg-gray-900 text-gray-300 py-12 text-center">
+        <p className="text-sm">© 2024 WhatsApp Tool. All rights reserved.</p>
+      </footer>
 
       {/* ✅ Modal with Netlify-Compatible Form */}
       {showModal && (
