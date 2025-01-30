@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 
 function App() {
   const [showModal, setShowModal] = useState(false);
-  const [showWaitingList, setShowWaitingList] = useState(false);
   const [formData, setFormData] = useState({
     name: '',
     email: ''
@@ -11,7 +10,6 @@ function App() {
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     setShowModal(false);
-    setShowWaitingList(true);
     setFormData({ name: '', email: '' });
   };
 
@@ -52,13 +50,16 @@ function App() {
       </nav>
 
       {/* ✅ Hero Section */}
-      <div className="bg-gradient-to-r from-[#2ECC71]/10 to-[#34495E]/10 py-16">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <div className="bg-gradient-to-r from-[#2ECC71]/10 to-[#34495E]/10 py-16 text-center">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
             Simplify Guest Communication with WhatsApp
           </h1>
-          <p className="text-xl text-[#34495E] mb-6">
+          <p className="text-xl text-[#34495E] mb-2">
             Join 500+ property managers already saving time and improving guest satisfaction!
+          </p>
+          <p className="text-lg text-gray-600 mb-8">
+            Automate guest communication, enhance your workflow, and free up hours every week.
           </p>
           <button 
             onClick={() => setShowModal(true)}
@@ -69,33 +70,45 @@ function App() {
         </div>
       </div>
 
-      {/* ✅ Problem/Solution Section (Restored) */}
-      <div className="bg-white py-16">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      {/* ✅ Problem/Solution Section */}
+      <div className="bg-white py-16 text-center">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <h2 className="text-3xl font-bold text-[#34495E] mb-8">
             Managing Guest Communication Can Be Overwhelming
           </h2>
-          <p className="text-lg text-gray-600 mb-6">
-            Property managers spend too much time on guest messaging. Our tool automates everything.
-          </p>
+          <div className="grid md:grid-cols-2 gap-12">
+            <div>
+              <h3 className="text-xl font-semibold text-red-600">Common Challenges</h3>
+              <ul className="text-gray-600 space-y-2 mt-4">
+                <li>Guests expect instant replies 24/7</li>
+                <li>Manual messaging is time-consuming</li>
+                <li>Important details get missed</li>
+              </ul>
+            </div>
+            <div>
+              <h3 className="text-xl font-semibold text-green-600">Our Solution</h3>
+              <ul className="text-gray-600 space-y-2 mt-4">
+                <li>Automated pre-arrival messages</li>
+                <li>One-click check-in instructions</li>
+                <li>Timely follow-ups and feedback requests</li>
+              </ul>
+            </div>
+          </div>
         </div>
       </div>
 
       {/* ✅ Features Section */}
-      <div className="bg-gray-50 py-16">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <div className="bg-gray-50 py-16 text-center">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <h2 className="text-3xl font-bold text-[#34495E] mb-8">
             Why Property Managers Love Our Tool
           </h2>
-          <p className="text-lg text-gray-600">
-            Automate guest communication, enhance your workflow, and free up hours every week.
-          </p>
         </div>
       </div>
 
       {/* ✅ Footer */}
       <footer className="bg-gray-900 text-gray-300 py-12 text-center">
-        <p className="text-sm">© 2024 WhatsApp Tool. All rights reserved.</p>
+        <p className="text-sm">© 2024 WhatsApp Messaging Tool. All rights reserved.</p>
       </footer>
 
       {/* ✅ Modal with Netlify-Compatible Form */}
