@@ -37,14 +37,12 @@ function App() {
             <div className="ml-2">
               <span className="text-xl font-bold text-[#34495E]">WhatsApp Tool</span>
             </div>
-            <div className="flex items-center space-x-4">
-              <button
-                onClick={() => setShowModal(true)}
-                className="inline-flex items-center px-4 py-2 bg-[#2ECC71] text-white font-semibold rounded-lg hover:bg-[#27AE60] transition-colors text-sm"
-              >
-                Start Free Trial
-              </button>
-            </div>
+            <button
+              onClick={() => setShowModal(true)}
+              className="px-4 py-2 bg-[#2ECC71] text-white font-semibold rounded-lg hover:bg-[#27AE60] transition-colors text-sm"
+            >
+              Start Free Trial
+            </button>
           </div>
         </div>
       </nav>
@@ -61,49 +59,52 @@ function App() {
           <p className="text-lg text-gray-600 mb-8">
             Automate guest communication, enhance your workflow, and free up hours every week.
           </p>
-          <button 
-            onClick={() => setShowModal(true)}
-            className="inline-flex items-center px-6 py-3 bg-[#2ECC71] hover:bg-[#27AE60] text-white font-semibold rounded-lg transition-colors"
-          >
-            Try It Free Today
-          </button>
+          <div className="flex gap-4 justify-center">
+            <button 
+              onClick={() => setShowModal(true)}
+              className="px-6 py-3 bg-[#2ECC71] hover:bg-[#27AE60] text-white font-semibold rounded-lg transition-colors"
+            >
+              Try It Free Today
+            </button>
+            <button 
+              className="px-6 py-3 border-2 border-[#34495E] text-[#34495E] hover:bg-[#34495E] hover:text-white font-semibold rounded-lg transition-colors"
+            >
+              Watch Demo
+            </button>
+          </div>
         </div>
       </div>
 
       {/* ✅ Problem/Solution Section */}
       <div className="bg-white py-16 text-center">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-3xl font-bold text-[#34495E] mb-8">
-            Managing Guest Communication Can Be Overwhelming
-          </h2>
-          <div className="grid md:grid-cols-2 gap-12">
-            <div>
-              <h3 className="text-xl font-semibold text-red-600">Common Challenges</h3>
-              <ul className="text-gray-600 space-y-2 mt-4">
-                <li>Guests expect instant replies 24/7</li>
-                <li>Manual messaging is time-consuming</li>
-                <li>Important details get missed</li>
-              </ul>
-            </div>
-            <div>
-              <h3 className="text-xl font-semibold text-green-600">Our Solution</h3>
-              <ul className="text-gray-600 space-y-2 mt-4">
-                <li>Automated pre-arrival messages</li>
-                <li>One-click check-in instructions</li>
-                <li>Timely follow-ups and feedback requests</li>
-              </ul>
-            </div>
+        <h2 className="text-3xl font-bold text-[#34495E] mb-8">
+          Managing Guest Communication Can Be Overwhelming
+        </h2>
+        <div className="grid md:grid-cols-2 gap-12">
+          <div>
+            <h3 className="text-xl font-semibold text-red-600">Common Challenges</h3>
+            <ul className="text-gray-600 space-y-2 mt-4">
+              <li>Guests expect instant replies 24/7</li>
+              <li>Manual messaging is time-consuming</li>
+              <li>Important details get missed</li>
+            </ul>
+          </div>
+          <div>
+            <h3 className="text-xl font-semibold text-green-600">Our Solution</h3>
+            <ul className="text-gray-600 space-y-2 mt-4">
+              <li>Automated pre-arrival messages</li>
+              <li>One-click check-in instructions</li>
+              <li>Timely follow-ups and feedback requests</li>
+            </ul>
           </div>
         </div>
       </div>
 
       {/* ✅ Features Section */}
       <div className="bg-gray-50 py-16 text-center">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-3xl font-bold text-[#34495E] mb-8">
-            Why Property Managers Love Our Tool
-          </h2>
-        </div>
+        <h2 className="text-3xl font-bold text-[#34495E] mb-8">
+          Why Property Managers Love Our Tool
+        </h2>
       </div>
 
       {/* ✅ Footer */}
